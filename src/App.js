@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import MainHeader from "./components/MainHeader";
+import PostsList from "./components/PostsList";
 
 function App() {
+  const [modalIsVisible, setModalIsVisible] = useState(false);
+
+  function toggleModalHandler() {
+    setModalIsVisible(!modalIsVisible);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <MainHeader onCreatePost={toggleModalHandler}/>
+      <main>
+        {/* <h1 className="text-center">Hello world (1:56:09)</h1> */}
+        <PostsList isModalVisible={modalIsVisible} toggleModal={toggleModalHandler} />
+      </main>
+    </>
   );
 }
 
