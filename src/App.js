@@ -13,7 +13,7 @@ function App() {
     <>
       <MainHeader onCreatePost={toggleModalHandler}/>
       <main>
-        {/* <h1 className="text-center">Hello world (1:56:09)</h1> */}
+        {/* <h1 className="text-center">Hello world (2:22:31)</h1> */}
         <PostsList isModalVisible={modalIsVisible} toggleModal={toggleModalHandler} />
       </main>
     </>
